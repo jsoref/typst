@@ -1,0 +1,59 @@
+# Public Keys
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+
+# RSA Private Key
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+
+# GPG Public Key
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----
+
+# GPG Signature
+-----BEGIN PGP SIGNATURE-----
+-----END PGP SIGNATURE-----
+
+# Certificates
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+
+# #quote[...]
+quote[
+]
+
+# crates/typst/src/math/accent.rs
+Supported accents include:
+[required]
+
+# tests/suite/layout/inline/hyphenate.typ
+--- hyphenate-outside-of-words ---
+costs-widow-orphan
+
+# smartquote.rs
+set text(lang: "de")
+```
+
+# tests/suite/layout/inline/hyphenate.typ
+--- hyphenate-off-temporarily ---
+---
+
+# docs/guides/tables.md
+table.header[Tenure][Party][President],
+```
+
+# tests/suite/layout/align.typ
+--- align-start-and-end ---
+---
+
+# tests/suite/model/quote.typ
+--- quote-nesting ---
+---
+
+# tests/suite/scripting/get-rule.typ
+--- get-rule-basic ---
+--- get-rule-folding ---
+
+# tests/suite/styling/show-where.typ
+--- show-where-optional-field-text ---
+---
