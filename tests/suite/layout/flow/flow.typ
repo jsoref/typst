@@ -42,7 +42,7 @@
 #block(lorem(20))
 
 --- issue-flow-layout-index-out-of-bounds ---
-// This bug caused an index-out-of-bounds panic when layouting paragraphs needed
+// This bug caused an index-out-of-bounds panic when laying-out paragraphs needed
 // multiple reorderings.
 #set page(height: 200pt)
 #lines(10)

@@ -361,7 +361,7 @@ impl<'a> StackLayouter<'a> {
         Ok(())
     }
 
-    /// Finish layouting and return the resulting frames.
+    /// Finish laying-out and return the resulting frames.
     fn finish(mut self) -> SourceResult<Fragment> {
         self.finish_region()?;
         Ok(Fragment::frames(self.finished))

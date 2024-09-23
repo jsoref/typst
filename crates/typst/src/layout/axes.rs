@@ -161,7 +161,7 @@ where
     }
 }
 
-/// The two layouting axes.
+/// The two laying-out axes.
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Hash)]
 pub enum Axis {
     /// The horizontal axis.

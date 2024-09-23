@@ -23,14 +23,14 @@ use crate::introspection::{Introspector, Location};
 /// its locator. When a layouter needs to call multiple sublayouters, we need to
 /// make an explicit decision:
 ///
-/// - Split: When we're layouting multiple distinct children (or other pieces of
+/// - Split: When we're laying-out multiple distinct children (or other pieces of
 ///   content), we need to split up the locator with [`Locator::split`]. This
 ///   allows us to produce multiple new `Locator`s for the sublayouts. When we
 ///   split the locator, each sublocator will be a distinct entity and using it
 ///   to e.g. layout the same piece of figure content will yield distinctly
 ///   numbered figures.
 ///
-/// - Relayout: When we're layouting the same content multiple times (e.g. when
+/// - Relayout: When we're laying-out the same content multiple times (e.g. when
 ///   measuring something), we can call [`Locator::relayout`] to use the same
 ///   locator multiple times. This indicates to the compiler that it's actually
 ///   the same content. Using it to e.g. layout the same piece of figure content
@@ -40,7 +40,7 @@ use crate::introspection::{Introspector, Location};
 ///   for measurement and then discarded.
 ///
 /// The `Locator` intentionally does not implement `Copy` and `Clone` so that it
-/// can only be used once. This ensures that whenever we are layouting multiple
+/// can only be used once. This ensures that whenever we are laying-out multiple
 /// things, we make an explicit decision whether we want to split or relayout.
 ///
 /// # How it works
@@ -169,7 +169,7 @@ impl<'a> Locator<'a> {
     /// Creates a new synthetic locator.
     ///
     /// This can be used to create a new dependent layout based on an element.
-    /// This is used for layouting footnote entries based on the location
+    /// This is used for laying-out footnote entries based on the location
     /// of the associated footnote.
     pub fn synthesize(location: Location) -> Self {
         Self { local: location.hash(), outer: None }

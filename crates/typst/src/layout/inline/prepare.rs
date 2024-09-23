@@ -72,7 +72,7 @@ impl<'a> Preparation<'a> {
 }
 
 /// Performs BiDi analysis and then prepares paragraph layout by building a
-/// representation on which we can do line breaking without layouting each and
+/// representation on which we can do line breaking without laying-out each and
 /// every line from scratch.
 #[typst_macros::time]
 pub fn prepare<'a>(
