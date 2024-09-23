@@ -642,7 +642,7 @@ impl<'a, 'b, 'x, 'y> FlowLayouter<'a, 'b, 'x, 'y> {
         }
     }
 
-    /// Finisht the region, migrating all sticky items to the next one.
+    /// Finish the region, migrating all sticky items to the next one.
     ///
     /// Returns whether we migrated into a last region.
     fn finish_region_with_migration(&mut self) -> SourceResult<()> {
