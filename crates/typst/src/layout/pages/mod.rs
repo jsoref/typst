@@ -114,9 +114,9 @@ fn layout_pages<'a>(
     for item in &items {
         match item {
             Item::Run(..) => {
-                let layouted = runs.next().unwrap()?;
-                for layouted in layouted {
-                    let page = finalize(engine, &mut counter, &mut tags, layouted)?;
+                let laidout = runs.next().unwrap()?;
+                for laidout in laidout {
+                    let page = finalize(engine, &mut counter, &mut tags, laidout)?;
                     pages.push(page);
                 }
             }
@@ -125,8 +125,8 @@ fn layout_pages<'a>(
                     continue;
                 }
 
-                let layouted = layout_blank_page(engine, locator.relayout(), *initial)?;
-                let page = finalize(engine, &mut counter, &mut tags, layouted)?;
+                let laidout = layout_blank_page(engine, locator.relayout(), *initial)?;
+                let page = finalize(engine, &mut counter, &mut tags, laidout)?;
                 pages.push(page);
             }
             Item::Tags(items) => {

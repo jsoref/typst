@@ -42,8 +42,8 @@ pub fn layout_blank_page(
     locator: Locator,
     initial: StyleChain,
 ) -> SourceResult<LayoutedPage> {
-    let layouted = layout_page_run(engine, &[], locator, initial)?;
-    Ok(layouted.into_iter().next().unwrap())
+    let laidout = layout_page_run(engine, &[], locator, initial)?;
+    Ok(laidout.into_iter().next().unwrap())
 }
 
 /// Layout a page run with uniform properties.
@@ -195,13 +195,13 @@ fn layout_page_run_impl(
     };
 
     // Layout marginals.
-    let mut layouted = Vec::with_capacity(fragment.len());
+    let mut laidout = Vec::with_capacity(fragment.len());
     for inner in fragment {
         let header_size = Size::new(inner.width(), margin.top - header_ascent);
         let footer_size = Size::new(inner.width(), margin.bottom - footer_descent);
         let full_size = inner.size() + margin.sum_by_axis();
         let mid = HAlignment::Center + VAlignment::Horizon;
-        layouted.push(LayoutedPage {
+        laidout.push(LayoutedPage {
             inner,
             fill: fill.clone(),
             numbering: numbering.clone(),
@@ -215,7 +215,7 @@ fn layout_page_run_impl(
         });
     }
 
-    Ok(layouted)
+    Ok(laidout)
 }
 
 /// Determines the styles used for a page run itself and page-level content like
