@@ -289,12 +289,12 @@ impl Packed<InlineElem> {
     }
 }
 
-/// Layouted items suitable for placing in a paragraph.
+/// Laid-out items suitable for placing in a paragraph.
 #[derive(Debug, Clone)]
 pub enum InlineItem {
     /// Absolute spacing between other items, and whether it is weak.
     Space(Abs, bool),
-    /// Layouted inline-level content.
+    /// Laid-out inline-level content.
     Frame(Frame),
 }
 

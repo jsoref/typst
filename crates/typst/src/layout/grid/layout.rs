@@ -1309,7 +1309,7 @@ impl<'a> GridLayouter<'a> {
                     let width = self.cell_spanned_width(cell, x);
                     pod.size.x = width;
 
-                    // Push the layouted frames into the individual output frames.
+                    // Push the laid-out frames into the individual output frames.
                     let fragment =
                         cell.layout(engine, disambiguator, self.styles, pod)?;
                     for (output, frame) in outputs.iter_mut().zip(fragment) {

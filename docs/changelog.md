@@ -1382,7 +1382,7 @@ description: |
     - Can be used with queries to find elements before or after its location
 
 - New [`measure`] function
-  - Measure the layouted size of elements
+  - Measure the laid-out size of elements
   - To be used in combination with the new [`style`] function that lets you
     generate different content based on the style context something is inserted
     into (because that affects the measured size of content)

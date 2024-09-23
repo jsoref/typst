@@ -25,7 +25,7 @@ pub enum Child<'a> {
     Rel(Rel<Abs>, u8),
     /// Fractional spacing.
     Fr(Fr),
-    /// An already layouted line of a paragraph.
+    /// An already laid-out line of a paragraph.
     Line(BumpBox<'a, LineChild>),
     /// A potentially breakable block.
     Block(BumpBox<'a, BlockChild<'a>>),

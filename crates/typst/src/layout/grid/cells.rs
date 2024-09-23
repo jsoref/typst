@@ -207,7 +207,7 @@ impl<'a> Cell<'a> {
     /// Layout the cell into the given regions.
     ///
     /// The `disambiguator` indicates which instance of this cell this should be
-    /// layouted as. For normal cells, it is always `0`, but for headers and
+    /// laid-out as. For normal cells, it is always `0`, but for headers and
     /// footers, it indicates the index of the header/footer among all. See the
     /// [`Locator`] docs for more details on the concepts behind this.
     pub fn layout(

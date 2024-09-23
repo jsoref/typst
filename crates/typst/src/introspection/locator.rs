@@ -255,7 +255,7 @@ impl<'a> SplitLocator<'a> {
     /// throughout edits, improving incremental compilation performance.
     ///
     /// A common choice for a key is the span of the content that will be
-    /// layouted with this locator.
+    /// laid-out with this locator.
     pub fn next<K: Hash>(&mut self, key: &K) -> Locator<'a> {
         self.next_inner(crate::utils::hash128(key))
     }

@@ -274,7 +274,7 @@ struct FlowLayouter<'a, 'b, 'x, 'y> {
     /// The initial size of `regions.size` that was available before we started
     /// subtracting.
     initial: Size,
-    /// Spacing and layouted blocks for the current region.
+    /// Spacing and laid-out blocks for the current region.
     items: Vec<FlowItem<'a, 'b>>,
     /// A queue of tags that will be attached to the next frame.
     pending_tags: Vec<&'a Tag>,
@@ -309,7 +309,7 @@ enum FlowItem<'a, 'b> {
     Absolute(Abs, u8),
     /// Fractional spacing between other items.
     Fractional(Fr),
-    /// A frame for a layouted block.
+    /// A frame for a laid-out block.
     Frame {
         /// The frame itself.
         frame: Frame,
@@ -580,7 +580,7 @@ impl<'a, 'b, 'x, 'y> FlowLayouter<'a, 'b, 'x, 'y> {
                 // Select the closer placement, top or bottom.
                 if align_y.is_auto() {
                     // When the figure's vertical midpoint would be above the
-                    // middle of the page if it were layouted in-flow, we use
+                    // middle of the page if it were laid-out in-flow, we use
                     // top alignment. Otherwise, we use bottom alignment.
                     let used = self.regions.full - self.regions.size.y;
                     let half = (frame.height() + placed.clearance) / 2.0;

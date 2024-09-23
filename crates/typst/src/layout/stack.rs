@@ -165,7 +165,7 @@ struct StackLayouter<'a> {
     used: GenericSize<Abs>,
     /// The sum of fractions in the current region.
     fr: Fr,
-    /// Already layouted items whose exact positions are not yet known due to
+    /// Already laid-out items whose exact positions are not yet known due to
     /// fractional spacing.
     items: Vec<StackItem>,
     /// Finished frames for previous regions.
@@ -178,7 +178,7 @@ enum StackItem {
     Absolute(Abs),
     /// Fractional spacing between other items.
     Fractional(Fr),
-    /// A frame for a layouted block.
+    /// A frame for a laid-out block.
     Frame(Frame, Axes<FixedAlignment>),
 }
 

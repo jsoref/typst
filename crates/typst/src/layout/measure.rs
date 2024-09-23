@@ -9,9 +9,9 @@ use crate::introspection::{Locator, LocatorLink};
 use crate::layout::{layout_frame, Abs, Axes, Length, Region, Size};
 use crate::syntax::Span;
 
-/// Measures the layouted size of content.
+/// Measures the laid-out size of content.
 ///
-/// The `measure` function lets you determine the layouted size of content.
+/// The `measure` function lets you determine the laid-out size of content.
 /// By default an infinite space is assumed, so the measured dimensions may
 /// not necessarily match the final dimensions of the content.
 /// If you want to measure in the current layout dimensions, you can combine

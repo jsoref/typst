@@ -33,7 +33,7 @@ pub enum Item<'a> {
     Absolute(Abs, bool),
     /// Fractional spacing between other items.
     Fractional(Fr, Option<(&'a Packed<BoxElem>, Locator<'a>, StyleChain<'a>)>),
-    /// Layouted inline-level content.
+    /// Laid-out inline-level content.
     Frame(Frame, StyleChain<'a>),
     /// A tag.
     Tag(&'a Tag),
@@ -76,7 +76,7 @@ impl<'a> Item<'a> {
         self.textual().len()
     }
 
-    /// The natural layouted width of the item.
+    /// The natural laid-out width of the item.
     pub fn natural_width(&self) -> Abs {
         match self {
             Self::Text(shaped) => shaped.width,

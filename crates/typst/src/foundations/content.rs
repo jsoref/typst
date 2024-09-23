@@ -83,7 +83,7 @@ pub struct Content {
 struct Inner<T: ?Sized + 'static> {
     /// An optional label attached to the element.
     label: Option<Label>,
-    /// The element's location which identifies it in the layouted output.
+    /// The element's location which identifies it in the laid-out output.
     location: Option<Location>,
     /// Manages the element during realization.
     /// - If bit 0 is set, the element is prepared.
