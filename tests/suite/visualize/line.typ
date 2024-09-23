@@ -74,8 +74,8 @@
 #line(length: 60pt, stroke: (paint: red, thickness: 1pt, dash: (1pt, 3pt, 9pt)))
 
 --- line-stroke-field-typo ---
-// Error: 29-56 unexpected key "thicknes", valid keys are "paint", "thickness", "cap", "join", "dash", and "miter-limit"
-#line(length: 60pt, stroke: (paint: red, thicknes: 1pt))
+// Error: 29-58 unexpected key "thickness_", valid keys are "paint", "thickness", "cap", "join", "dash", and "miter-limit"
+#line(length: 60pt, stroke: (paint: red, thickness_: 1pt))
 
 --- line-stroke-bad-dash-kind ---
 // Error: 29-55 expected "solid", "dotted", "densely-dotted", "loosely-dotted", "dashed", "densely-dashed", "loosely-dashed", "dash-dotted", "densely-dash-dotted", "loosely-dash-dotted", array, dictionary, none, or auto
