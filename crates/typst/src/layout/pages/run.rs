@@ -23,7 +23,7 @@ use crate::World;
 /// page number to be finalized into a `Page`. (Because the margins can depend
 /// on the page number.)
 #[derive(Clone)]
-pub struct LayoutedPage {
+pub struct LaidOutPage {
     pub inner: Frame,
     pub margin: Sides<Abs>,
     pub binding: Binding,
@@ -41,7 +41,7 @@ pub fn layout_blank_page(
     engine: &mut Engine,
     locator: Locator,
     initial: StyleChain,
-) -> SourceResult<LayoutedPage> {
+) -> SourceResult<LaidOutPage> {
     let laidout = layout_page_run(engine, &[], locator, initial)?;
     Ok(laidout.into_iter().next().unwrap())
 }
@@ -53,7 +53,7 @@ pub fn layout_page_run(
     children: &[Pair],
     locator: Locator,
     initial: StyleChain,
-) -> SourceResult<Vec<LayoutedPage>> {
+) -> SourceResult<Vec<LaidOutPage>> {
     layout_page_run_impl(
         engine.world,
         engine.introspector,
@@ -78,7 +78,7 @@ fn layout_page_run_impl(
     children: &[Pair],
     locator: Tracked<Locator>,
     initial: StyleChain,
-) -> SourceResult<Vec<LayoutedPage>> {
+) -> SourceResult<Vec<LaidOutPage>> {
     let link = LocatorLink::new(locator);
     let mut locator = Locator::link(&link).split();
     let mut engine = Engine {
@@ -201,7 +201,7 @@ fn layout_page_run_impl(
         let footer_size = Size::new(inner.width(), margin.bottom - footer_descent);
         let full_size = inner.size() + margin.sum_by_axis();
         let mid = HAlignment::Center + VAlignment::Horizon;
-        laidout.push(LayoutedPage {
+        laidout.push(LaidOutPage {
             inner,
             fill: fill.clone(),
             numbering: numbering.clone(),

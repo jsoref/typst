@@ -6,7 +6,7 @@ use comemo::{Tracked, TrackedMut};
 
 use self::collect::{collect, Item};
 use self::finalize::finalize;
-use self::run::{layout_blank_page, layout_page_run, LayoutedPage};
+use self::run::{layout_blank_page, layout_page_run, LaidOutPage};
 use crate::diag::SourceResult;
 use crate::engine::{Engine, Route, Sink, Traced};
 use crate::foundations::{Content, StyleChain};
