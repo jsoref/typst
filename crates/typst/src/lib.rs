@@ -12,7 +12,7 @@
 //!   the source file. The elements of the content tree are well structured and
 //!   order-independent and thus much better suited for further processing than
 //!   the raw markup.
-//! - **Layouting:**
+//! - **Layout:**
 //!   Next, the content is [laid-out] into a [document] containing one [frame]
 //!   per page with items at fixed positions.
 //! - **Exporting:**
@@ -26,7 +26,7 @@
 //! [evaluate]: eval::eval
 //! [module]: foundations::Module
 //! [content]: foundations::Content
-//! [layouted]: crate::layout::layout_document
+//! [layout]: crate::layout::layout_document
 //! [document]: model::Document
 //! [frame]: layout::Frame
 
