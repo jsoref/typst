@@ -23,14 +23,14 @@ use crate::introspection::{Introspector, Location};
 /// its locator. When a layouter needs to call multiple sublayouters, we need to
 /// make an explicit decision:
 ///
-/// - Split: When we're layouting multiple distinct children (or other pieces of
+/// - Split: When we're laying-out multiple distinct children (or other pieces of
 ///   content), we need to split up the locator with [`Locator::split`]. This
 ///   allows us to produce multiple new `Locator`s for the sublayouts. When we
 ///   split the locator, each sublocator will be a distinct entity and using it
 ///   to e.g. layout the same piece of figure content will yield distinctly
 ///   numbered figures.
 ///
-/// - Relayout: When we're layouting the same content multiple times (e.g. when
+/// - Relayout: When we're laying-out the same content multiple times (e.g. when
 ///   measuring something), we can call [`Locator::relayout`] to use the same
 ///   locator multiple times. This indicates to the compiler that it's actually
 ///   the same content. Using it to e.g. layout the same piece of figure content
@@ -40,7 +40,7 @@ use crate::introspection::{Introspector, Location};
 ///   for measurement and then discarded.
 ///
 /// The `Locator` intentionally does not implement `Copy` and `Clone` so that it
-/// can only be used once. This ensures that whenever we are layouting multiple
+/// can only be used once. This ensures that whenever we are laying-out multiple
 /// things, we make an explicit decision whether we want to split or relayout.
 ///
 /// # How it works
@@ -62,7 +62,7 @@ use crate::introspection::{Introspector, Location};
 /// - A very simple way to generate unique IDs would be to just increase a
 ///   counter for each element. In this setup, (1) is somewhat satisfied: In
 ///   principle, the counter will line up across iterations, but things start to
-///   break down once we generate content dependant on introspection since the
+///   break down once we generate content dependent on introspection since the
 ///   IDs generated for that new content will shift the IDs for all following
 ///   elements in the document. (2) is not satisfied since an edit in the middle
 ///   of the document shifts all later IDs. (3) is obviously not satisfied.
@@ -76,7 +76,7 @@ use crate::introspection::{Introspector, Location};
 ///   e.g. `#for _ in range(5) { figure(..) }`. To handle this case, we can then
 ///   disambiguate elements with the same span with an increasing counter. In
 ///   this setup, (1) is mostly satisfied: Unless we do stuff like generating
-///   colliding counter updates dependant on introspection, things will line up.
+///   colliding counter updates dependent on introspection, things will line up.
 ///   (2) is also reasonably well satisfied, as typical edits will only affect
 ///   the single element at the currently edited span. Only if we edit inside of
 ///   a function, loop, or similar construct, we will affect multiple elements.
@@ -114,7 +114,7 @@ use crate::introspection::{Introspector, Location};
 /// locations assigned during measurement match up exactly with the locations of
 /// real document elements. Without this guarantee, many introspection-driven
 /// features (like counters, state, and citations) don't work correctly (since
-/// they perform queries dependant on concrete locations).
+/// they perform queries dependent on concrete locations).
 ///
 /// This is all fine and good, but things get really tricky when the _user_
 /// measures such introspecting content since the user isn't kindly managing
@@ -168,8 +168,8 @@ impl<'a> Locator<'a> {
 
     /// Creates a new synthetic locator.
     ///
-    /// This can be used to create a new dependant layout based on an element.
-    /// This is used for layouting footnote entries based on the location
+    /// This can be used to create a new dependent layout based on an element.
+    /// This is used for laying-out footnote entries based on the location
     /// of the associated footnote.
     pub fn synthesize(location: Location) -> Self {
         Self { local: location.hash(), outer: None }
@@ -255,7 +255,7 @@ impl<'a> SplitLocator<'a> {
     /// throughout edits, improving incremental compilation performance.
     ///
     /// A common choice for a key is the span of the content that will be
-    /// layouted with this locator.
+    /// laid-out with this locator.
     pub fn next<K: Hash>(&mut self, key: &K) -> Locator<'a> {
         self.next_inner(crate::utils::hash128(key))
     }

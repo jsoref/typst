@@ -16,7 +16,7 @@ const EN_DASH: char = '–';
 const EM_DASH: char = '—';
 const LINE_SEPARATOR: char = '\u{2028}'; // We use LS to distinguish justified breaks.
 
-/// A layouted line, consisting of a sequence of layouted paragraph items that
+/// A laid-out line, consisting of a sequence of laid-out paragraph items that
 /// are mostly borrowed from the preparation phase. This type enables you to
 /// measure the size of a line in a range before committing to building the
 /// line's frame.
@@ -225,7 +225,7 @@ fn collect_items<'a>(
     items
 }
 
-/// Calls `f` for the the BiDi-reordered ranges of a line.
+/// Calls `f` for the BiDi-reordered ranges of a line.
 fn reorder<F>(p: &Preparation, range: Range, mut f: F)
 where
     F: FnMut(Range, bool),

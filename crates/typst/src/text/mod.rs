@@ -442,7 +442,7 @@ pub struct TextElem {
     ///
     /// When writing in right-to-left scripts like Arabic or Hebrew, you should
     /// set the [text language]($text.lang) or direction. While individual runs
-    /// of text are automatically layouted in the correct direction, setting the
+    /// of text are automatically laid-out in the correct direction, setting the
     /// dominant direction gives the bidirectional reordering algorithm the
     /// necessary information to correctly place punctuation and inline objects.
     /// Furthermore, setting the direction affects the alignment values `start`

@@ -861,7 +861,7 @@ description: |
   - Import autocompletion now only shows the latest package version until a
     colon is typed
   - Fixed autocompletion for dictionary key containing a space
-  - Fixed autocompletion for for loops
+  - Fixed autocompletion for for-loops
 
 - Command line interface
   - Added `typst query` subcommand to execute a
@@ -894,7 +894,7 @@ description: |
 
 - Development
   - Extracted parser and syntax tree into `typst-syntax` crate
-  - The `World::today` implementation of Typst dependants may need fixing if
+  - The `World::today` implementation of Typst dependents may need fixing if
     they have the same [bug](https://github.com/typst/typst/issues/1842) that
     the CLI world had
 
@@ -1008,7 +1008,7 @@ description: |
     path must contain `[{n}]` if the document has multiple pages.
   - Added `--diagnostic-format=short` for Unix-style short diagnostics
   - Doesn't emit color codes anymore if stderr isn't a TTY
-  - Now sets the correct exit when invoked with a non-existent file
+  - Now sets the correct exit when invoked with a nonexistent file
   - Now ignores UTF-8 BOM in Typst files
 
 - Miscellaneous Improvements
@@ -1382,7 +1382,7 @@ description: |
     - Can be used with queries to find elements before or after its location
 
 - New [`measure`] function
-  - Measure the layouted size of elements
+  - Measure the laid-out size of elements
   - To be used in combination with the new [`style`] function that lets you
     generate different content based on the style context something is inserted
     into (because that affects the measured size of content)

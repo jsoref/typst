@@ -35,7 +35,7 @@ use crate::World;
 
 /// Layout content into multiple regions.
 ///
-/// When just layouting into a single region, prefer [`layout_frame`].
+/// When just laying-out into a single region, prefer [`layout_frame`].
 pub fn layout_fragment(
     engine: &mut Engine,
     content: &Content,
@@ -63,7 +63,7 @@ pub fn layout_fragment(
 /// For now, this just invokes normal layout on cycled smaller regions. However,
 /// in the future, columns will be able to interact (e.g. through floating
 /// figures), so this is already factored out because it'll be conceptually
-/// different from just layouting into more smaller regions.
+/// different from just laying-out into more smaller regions.
 pub fn layout_fragment_with_columns(
     engine: &mut Engine,
     content: &Content,
@@ -274,7 +274,7 @@ struct FlowLayouter<'a, 'b, 'x, 'y> {
     /// The initial size of `regions.size` that was available before we started
     /// subtracting.
     initial: Size,
-    /// Spacing and layouted blocks for the current region.
+    /// Spacing and laid-out blocks for the current region.
     items: Vec<FlowItem<'a, 'b>>,
     /// A queue of tags that will be attached to the next frame.
     pending_tags: Vec<&'a Tag>,
@@ -309,7 +309,7 @@ enum FlowItem<'a, 'b> {
     Absolute(Abs, u8),
     /// Fractional spacing between other items.
     Fractional(Fr),
-    /// A frame for a layouted block.
+    /// A frame for a laid-out block.
     Frame {
         /// The frame itself.
         frame: Frame,
@@ -580,7 +580,7 @@ impl<'a, 'b, 'x, 'y> FlowLayouter<'a, 'b, 'x, 'y> {
                 // Select the closer placement, top or bottom.
                 if align_y.is_auto() {
                     // When the figure's vertical midpoint would be above the
-                    // middle of the page if it were layouted in-flow, we use
+                    // middle of the page if it were laid-out in-flow, we use
                     // top alignment. Otherwise, we use bottom alignment.
                     let used = self.regions.full - self.regions.size.y;
                     let half = (frame.height() + placed.clearance) / 2.0;
@@ -642,7 +642,7 @@ impl<'a, 'b, 'x, 'y> FlowLayouter<'a, 'b, 'x, 'y> {
         }
     }
 
-    /// Finisht the region, migrating all sticky items to the next one.
+    /// Finish the region, migrating all sticky items to the next one.
     ///
     /// Returns whether we migrated into a last region.
     fn finish_region_with_migration(&mut self) -> SourceResult<()> {
@@ -855,7 +855,7 @@ impl<'a, 'b, 'x, 'y> FlowLayouter<'a, 'b, 'x, 'y> {
         Ok(())
     }
 
-    /// Finish layouting and return the resulting fragment.
+    /// Finish laying-out and return the resulting fragment.
     fn finish(mut self, regions: Regions) -> SourceResult<Fragment> {
         if self.expand.y {
             while !self.regions.backlog.is_empty() {

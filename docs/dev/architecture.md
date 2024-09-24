@@ -119,15 +119,15 @@ realization can trigger closure evaluation, which in turn produces content that
 is recursively realized. Realization is a shallow process: While collecting list
 items into a list that we want to layout, we don't realize the content within
 the list items just yet. This only happens lazily once the list items are
-layouted.
+laid-out.
 
 When we a have realized the content into a layoutable element, we can then
 layout it into _regions,_ which describe the space into which the content shall
-be layouted. Within these, an element is free to layout itself as it sees fit,
+be laid-out. Within these, an element is free to layout itself as it sees fit,
 returning one `Frame` per region it wants to occupy.
 
 **Introspection:**
-How content layouts (and realizes) may depend on how _it itself_ is layouted
+How content layouts (and realizes) may depend on how _it itself_ is laid-out
 (e.g., through page numbers in the table of contents, counters, state, etc.).
 Typst resolves these inherently cyclical dependencies through the _introspection
 loop:_ The layout phase runs in a loop until the results stabilize. Most
@@ -141,10 +141,10 @@ reuse as much as possible.
 
 
 ## Export
-Exporters live in separate crates. They turn layouted frames into an output file
+Exporters live in separate crates. They turn laid-out frames into an output file
 format.
 
-- The PDF exporter takes layouted frames and turns them into a PDF file.
+- The PDF exporter takes laid-out frames and turns them into a PDF file.
 - The SVG exporter takes a frame and turns it into an SVG.
 - The built-in renderer takes a frame and turns it into a pixel buffer.
 - HTML export does not exist yet, but will in the future. However, this requires

@@ -6,7 +6,7 @@ use crate::layout::{Abs, AlignElem, Dir, Em, FixedAlignment};
 use crate::model::Linebreaks;
 use crate::text::{Costs, Lang, TextElem};
 
-/// A paragraph representation in which children are already layouted and text
+/// A paragraph representation in which children are already laid-out and text
 /// is already preshaped.
 ///
 /// In many cases, we can directly reuse these results when constructing a line.
@@ -19,7 +19,7 @@ pub struct Preparation<'a> {
     ///
     /// This is `None` if the paragraph is BiDi-uniform (all the base direction).
     pub bidi: Option<BidiInfo<'a>>,
-    /// Text runs, spacing and layouted elements.
+    /// Text runs, spacing and laid-out elements.
     pub items: Vec<(Range, Item<'a>)>,
     /// Maps from byte indices to item indices.
     pub indices: Vec<usize>,
@@ -72,7 +72,7 @@ impl<'a> Preparation<'a> {
 }
 
 /// Performs BiDi analysis and then prepares paragraph layout by building a
-/// representation on which we can do line breaking without layouting each and
+/// representation on which we can do line breaking without laying-out each and
 /// every line from scratch.
 #[typst_macros::time]
 pub fn prepare<'a>(

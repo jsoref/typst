@@ -12,8 +12,8 @@
 //!   the source file. The elements of the content tree are well structured and
 //!   order-independent and thus much better suited for further processing than
 //!   the raw markup.
-//! - **Layouting:**
-//!   Next, the content is [layouted] into a [document] containing one [frame]
+//! - **Layout:**
+//!   Next, the content is [laid-out] into a [document] containing one [frame]
 //!   per page with items at fixed positions.
 //! - **Exporting:**
 //!   These frames can finally be exported into an output format (currently PDF,
@@ -26,7 +26,7 @@
 //! [evaluate]: eval::eval
 //! [module]: foundations::Module
 //! [content]: foundations::Content
-//! [layouted]: crate::layout::layout_document
+//! [layout]: crate::layout::layout_document
 //! [document]: model::Document
 //! [frame]: layout::Frame
 
@@ -79,7 +79,7 @@ use crate::text::{Font, FontBook};
 use crate::utils::LazyHash;
 use crate::visualize::Color;
 
-/// Compile sources into a fully layouted document.
+/// Compile sources into a fully laid-out document.
 ///
 /// - Returns `Ok(document)` if there were no fatal errors.
 /// - Returns `Err(errors)` if there were fatal errors.

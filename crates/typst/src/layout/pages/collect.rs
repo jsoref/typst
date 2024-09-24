@@ -7,7 +7,7 @@ use crate::realize::Pair;
 
 /// An item in page layout.
 pub enum Item<'a> {
-    /// A page run containing content. All runs will be layouted in parallel.
+    /// A page run containing content. All runs will be laid-out in parallel.
     Run(&'a [Pair<'a>], StyleChain<'a>, Locator<'a>),
     /// Tags in between pages. These will be prepended to the first start of
     /// the next page, or appended at the very end of the final page if there is
@@ -117,7 +117,7 @@ pub fn collect<'a>(
     items
 }
 
-/// Migrates trailing start tags without accompanying end tags tags from before
+/// Migrates trailing start tags without accompanying end tags from before
 /// a pagebreak to after it. Returns the position right after the last
 /// non-migrated tag.
 ///

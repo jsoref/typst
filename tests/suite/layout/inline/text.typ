@@ -70,7 +70,7 @@ I saw Zoe yӛsterday, on the tram.
 
 --- text-tracking-changed-temporarily ---
 // Test tracking for only part of paragraph.
-I'm in#text(tracking: 0.15em + 1.5pt)[ spaace]!
+I'm in#text(tracking: 0.15em + 1.5pt)[ space]!
 
 --- text-tracking-mark-placement ---
 // Test that tracking doesn't disrupt mark placement.

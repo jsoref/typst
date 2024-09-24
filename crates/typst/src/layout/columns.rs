@@ -51,7 +51,7 @@ pub struct ColumnsElem {
     #[default(Ratio::new(0.04).into())]
     pub gutter: Rel<Length>,
 
-    /// The content that should be layouted into the columns.
+    /// The content that should be laid-out into the columns.
     #[required]
     pub body: Content,
 }

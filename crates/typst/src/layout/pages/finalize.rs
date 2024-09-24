@@ -1,4 +1,4 @@
-use super::LayoutedPage;
+use super::LaidOutPage;
 use crate::diag::SourceResult;
 use crate::engine::Engine;
 use crate::introspection::{ManualPageCounter, Tag};
@@ -11,7 +11,7 @@ pub fn finalize(
     engine: &mut Engine,
     counter: &mut ManualPageCounter,
     tags: &mut Vec<Tag>,
-    LayoutedPage {
+    LaidOutPage {
         inner,
         mut margin,
         binding,
@@ -22,7 +22,7 @@ pub fn finalize(
         foreground,
         fill,
         numbering,
-    }: LayoutedPage,
+    }: LaidOutPage,
 ) -> SourceResult<Page> {
     // If two sided, left becomes inside and right becomes outside.
     // Thus, for left-bound pages, we want to swap on even pages and

@@ -56,7 +56,7 @@ $#place(dx: 5em)[Placed] "text"$ \
 // Operator spacing
 $#counter("test").update(3) + b$ \
 $#place(dx: 5em)[a] + b$
-// Validate that ignorant elements are layouted
+// Validate that ignorant elements are laid-out
 #context test(counter("test").get(), (3,))
 
 --- issue-1052-math-number-spacing ---

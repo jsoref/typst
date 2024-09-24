@@ -140,7 +140,7 @@ impl<'a> GridLayouter<'a> {
             pod.full = region_full;
         }
 
-        // Push the layouted frames directly into the finished frames.
+        // Push the laid-out frames directly into the finished frames.
         let fragment = cell.layout(engine, disambiguator, self.styles, pod)?;
         let (current_region, current_rrows) = current_region_data.unzip();
         for ((i, finished), frame) in self
